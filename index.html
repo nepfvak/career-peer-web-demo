@@ -41,6 +41,7 @@
   /* utility nav bars */
   .util-bar{background:#fff;}
   .util-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:14px 0;}
+  .peer-mobile-controls{display:none;justify-content:center;gap:16px;margin-top:16px;}
   .util-links{display:flex;gap:20px;flex-wrap:wrap;}
   .util-links a{color:var(--primary);font-weight:600;font-size:13px;}
   .util-links a:hover{text-decoration:underline;}
@@ -183,9 +184,25 @@
 
   @media (max-width:760px){
     .util-links,.mega-inner{display:none;}
-    .body-layout{flex-direction:column;}
-    .sidebar{flex:1 1 100%;}
+    .util-inner{justify-content:center;}
+    .wrap{padding-left:20px;padding-right:20px;}
+    .body-layout{flex-direction:column;padding-top:24px;padding-bottom:48px;}
+    .sidebar{flex:1 1 100%;order:2;}
+    .main-col{order:1;}
     .main-col h1{font-size:28px;}
+    .mini-hero{height:220px;}
+    .tertiary-inner{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;-webkit-overflow-scrolling:touch;}
+    .tertiary-inner a{flex-shrink:0;}
+    .section{padding-top:56px;padding-bottom:56px;}
+    .section-tight{padding-top:48px;padding-bottom:56px;}
+    .become-band,.cta-band{padding-top:56px;padding-bottom:56px;}
+    .section-head{margin-bottom:36px;}
+    .section-head h2{font-size:26px;}
+    .footer-top{gap:32px;}
+    .footer-bottom{flex-direction:column;align-items:flex-start;}
+    .peer-carousel{flex-direction:column;}
+    .peer-arrow-side{display:none;}
+    .peer-mobile-controls{display:flex;}
   }
 </style>
 </head>
@@ -344,7 +361,7 @@
       <h2>Real students, real experience</h2>
     </div>
     <div class="peer-carousel">
-      <button class="peer-arrow" onclick="peerNav(-1)" aria-label="Previous peers">‹</button>
+      <button class="peer-arrow peer-arrow-side" onclick="peerNav(-1)" aria-label="Previous peers">‹</button>
       <div class="peer-viewport">
         <div class="peer-page active">
           <div class="peer-card"><div class="avatar">AJ</div><h3>Amara J.</h3><div class="major">Business Analytics</div><span class="tag">Resumes &amp; Handshake</span><p class="blurb">Loves turning a messy resume into an interview-ready one.</p></div>
@@ -365,6 +382,11 @@
           <div class="peer-card"><div class="avatar">AS</div><h3>Aaliyah S.</h3><div class="major">Biology</div><span class="tag">Mock Interviews &amp; STEM</span><p class="blurb">Practices interviews like she's already got the offer.</p></div>
         </div>
       </div>
+      <button class="peer-arrow peer-arrow-side" onclick="peerNav(1)" aria-label="Next peers">›</button>
+    </div>
+
+    <div class="peer-mobile-controls">
+      <button class="peer-arrow" onclick="peerNav(-1)" aria-label="Previous peers">‹</button>
       <button class="peer-arrow" onclick="peerNav(1)" aria-label="Next peers">›</button>
     </div>
 
