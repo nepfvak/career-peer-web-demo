@@ -126,7 +126,7 @@
   .peer-note{text-align:center;font-size:13px;color:var(--gray-3);font-style:italic;margin:18px 0 0;}
   .peer-carousel{display:flex;align-items:center;gap:16px;}
   .peer-viewport{flex:1 1 auto;overflow:hidden;}
-  .peer-page{display:none;flex-wrap:wrap;gap:24px;}
+  .peer-page{display:none;flex-wrap:wrap;justify-content:center;gap:24px;}
   .peer-page.active{display:flex;}
   .peer-arrow{flex-shrink:0;width:44px;height:44px;border-radius:50%;border:1px solid var(--gray-2);background:#fff;color:var(--primary);font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;}
   .peer-arrow:hover{background:var(--gray-1);}
@@ -140,14 +140,13 @@
   .stat .label{font-size:14px;color:var(--text-muted);font-weight:600;margin-top:4px;}
   .stats-note{text-align:center;font-size:13px;color:var(--gray-3);font-style:italic;margin-top:32px;}
 
-  .faq-item{position:relative;border:1px solid var(--gray-2);overflow:hidden;margin-bottom:16px;}
-  .faq-item .bar{position:absolute;left:0;top:0;bottom:0;width:8px;background:transparent;}
-  .faq-item.open .bar{background:var(--primary);}
-  .faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 24px 20px 32px;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+  .faq-item{position:relative;border:1px solid var(--gray-2);border-left:8px solid transparent;overflow:hidden;margin-bottom:16px;transition:border-left-color .15s;}
+  .faq-item.open{border-left-color:var(--primary);}
+  .faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 24px 20px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;}
   .faq-q:hover{background:#E3E3E3;}
   .faq-q .q-text{font-size:17px;font-weight:700;color:var(--text);}
   .faq-q .ind{font-size:22px;font-weight:700;color:var(--primary);flex-shrink:0;}
-  .faq-a{display:none;padding:0 24px 22px 32px;color:var(--text-muted);font-size:15px;line-height:1.65;}
+  .faq-a{display:none;padding:0 24px 22px 24px;color:var(--text-muted);font-size:15px;line-height:1.65;}
   .faq-item.open .faq-a{display:block;}
 
   .cta-band{background:var(--primary);padding:80px 0;text-align:center;}
@@ -424,22 +423,18 @@
     </div>
     <div id="faq-list">
       <div class="faq-item open" data-id="0">
-        <div class="bar"></div>
         <button class="faq-q" onclick="toggleFaq(0)"><span class="q-text">Is this actually free?</span><span class="ind">−</span></button>
         <div class="faq-a">Yes. Every service Career Peers and Career Services offer is free for current UofM students and alumni, no fees, ever.</div>
       </div>
       <div class="faq-item" data-id="1">
-        <div class="bar"></div>
         <button class="faq-q" onclick="toggleFaq(1)"><span class="q-text">How far ahead do I need to book?</span><span class="ind">+</span></button>
         <div class="faq-a">Appointments generally need about 24 hours notice through TigerLink, powered by Handshake.</div>
       </div>
       <div class="faq-item" data-id="2">
-        <div class="bar"></div>
         <button class="faq-q" onclick="toggleFaq(2)"><span class="q-text">What should I bring to a mock interview?</span><span class="ind">+</span></button>
         <div class="faq-a">A copy of the job posting you are preparing for, or a similar one, so we can tailor the practice to it.</div>
       </div>
       <div class="faq-item" data-id="3">
-        <div class="bar"></div>
         <button class="faq-q" onclick="toggleFaq(3)"><span class="q-text">Do Peers replace my Career Specialist?</span><span class="ind">+</span></button>
         <div class="faq-a">No. Think of Peers as your fast, friendly first stop. Your assigned Career Specialist in your Talent Community handles deeper, individualized guidance.</div>
       </div>
